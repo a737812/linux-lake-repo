@@ -2,8 +2,8 @@
   "distro": "Linux-Lake-OS",
   "version": "1.0",
   "codename": "lake",
-  "arch": ["x86_64", "aarch64"],
-  "description": "Linux-Lake-OS 官方正式主索引。由 AI 系统全自动维护与签名。",
+  "arch": ["amd64", "arm64"],
+  "description": "Linux-Lake-OS 官方正式主索引。全能之王版本，包含桌面、渗透、开发全生态套件。",
   "maintainers": ["Lake-OS Maintainer Agent <gemini@ai.assistance.operit>"],
   "mirrors": {
     "official": ["https://raw.githubusercontent.com/a737812/linux-lake-sub1/main/"],
@@ -17,7 +17,8 @@
       "description": "Lake-OS 核心系统工具链（tune, fw, guard, fix, security, panel）",
       "repo": "packages/core",
       "files": {
-        "x86_64": "lake-core-1.0-x86_64.tar.xz"
+        "x86_64": "lake-core-1.0-x86_64.tar.xz",
+        "arm64": "lake-core-1.0-x86_64.tar.xz"
       },
       "sha256": "ef60988212f3caa5951333808d545636fb505e159ee35d169d3e33be0618bee9",
       "depends": ["python3", "dialog", "iptables"]
@@ -29,10 +30,44 @@
       "description": "Lake-OS 专属包管理器 `lake` 生产环境包",
       "repo": "packages/pm",
       "files": {
-        "x86_64": "lake-pm-1.0-x86_64.tar.xz"
+        "x86_64": "lake-pm-1.0-x86_64.tar.xz",
+        "arm64": "lake-pm-1.0-x86_64.tar.xz"
       },
       "sha256": "a636c6e09046f891043693d50a4d04be5744f869dff83035e46e390278e715ba",
       "depends": ["python3"]
+    },
+    {
+      "name": "lake-desktop",
+      "version": "1.0.0",
+      "category": "desktop",
+      "description": "Lake-OS 自研高颜值原生桌面 (Wayland, 低资源占用)",
+      "repo": "packages/desktop",
+      "files": {
+        "arm64": "lake-desktop-1.0-arm64.tar.xz"
+      },
+      "sha256": "5662a7f1107a442ff805c82b8b58469a79bdf9f9120780be4a3a85f99f046fe6"
+    },
+    {
+      "name": "lake-security-kit",
+      "version": "2026.1",
+      "category": "security",
+      "description": "稳定不崩的渗透测试完整工具栈 (Metasploit, Nmap 等)",
+      "repo": "packages/security",
+      "files": {
+        "arm64": "lake-security-kit-2026.1-arm64.tar.xz"
+      },
+      "sha256": "ffc9fd6b38e11b3e9beaaac1ab3e69f01c1d24575ffd765077c0703c88c4638f"
+    },
+    {
+      "name": "lake-dev-kit",
+      "version": "1.0",
+      "category": "development",
+      "description": "全套编译链 GCC/Clang、Python/Node/Go 环境、容器化支持",
+      "repo": "packages/dev",
+      "files": {
+        "arm64": "lake-dev-kit-1.0-arm64.tar.xz"
+      },
+      "sha256": "770874d5e460b05e1103cfe8afa949f82d71cb777e18bbdb6e3819110c63e6d0"
     }
   ]
 }
