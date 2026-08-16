@@ -1,5 +1,38 @@
 {
-  "repo_name": "linux‑lake‑repo",
-  "desc": "Lake‑OS系列衍生发行版软件源",
-  "packages": []
+  "distro": "Linux-Lake-OS",
+  "version": "1.0",
+  "codename": "lake",
+  "arch": ["x86_64", "aarch64"],
+  "description": "Linux-Lake-OS 官方正式主索引。由 AI 系统全自动维护与签名。",
+  "maintainers": ["Lake-OS Maintainer Agent <gemini@ai.assistance.operit>"],
+  "mirrors": {
+    "official": ["https://raw.githubusercontent.com/a737812/linux-lake-sub1/main/"],
+    "cn-proxy": ["https://ghproxy.com", "https://gh-proxy.com", "https://ghfast.top"]
+  },
+  "packages": [
+    {
+      "name": "lake-core",
+      "version": "1.0",
+      "category": "core",
+      "description": "Lake-OS 核心系统工具链（tune, fw, guard, fix, security, panel）",
+      "repo": "packages/core",
+      "files": {
+        "x86_64": "lake-core-1.0-x86_64.tar.xz"
+      },
+      "sha256": "ef60988212f3caa5951333808d545636fb505e159ee35d169d3e33be0618bee9",
+      "depends": ["python3", "dialog", "iptables"]
+    },
+    {
+      "name": "lake-pm",
+      "version": "1.0",
+      "category": "core",
+      "description": "Lake-OS 专属包管理器 `lake` 生产环境包",
+      "repo": "packages/pm",
+      "files": {
+        "x86_64": "lake-pm-1.0-x86_64.tar.xz"
+      },
+      "sha256": "a636c6e09046f891043693d50a4d04be5744f869dff83035e46e390278e715ba",
+      "depends": ["python3"]
+    }
+  ]
 }
